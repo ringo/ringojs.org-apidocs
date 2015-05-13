@@ -1,0 +1,17 @@
+{
+  "name": "ringojs-apidocs",
+  "version": "0.1.0",
+  "description": "A custom renderer for the RingoJS API documentation.",
+  "homepage": "http://ringojs.org/api/",
+  "keywords": [],
+  "author": "Philipp Naderer",
+  "engines": {
+    "ringojs": ">= 0.11"
+  },
+  "dependencies": {
+    "ringo-jsdoc": ">= 0.11.0",
+    "ringo-commonmark": ">= 0.2.0",
+    "reinhardt": ">= 0.3.0"
+  },
+  "main": "main.js"
+}
