@@ -80,6 +80,10 @@
     margin-right: 5px;
 }
 
+.jsdoc li.deprecated {
+    text-decoration: line-through;
+}
+
 .jsdoc .parameters {
     color: #949494;
 }

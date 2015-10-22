@@ -34,8 +34,11 @@
     <h2 class="functions">Functions</h2>
     <ul class="functions propertyoverview">
         {% for function in item.functions %}
-        <li>
-            <a href="#{{ function.name }}" class="jsdoc-title">{{ function.shortName }}</a><span class="parameters">({{ function.parameters | paramTypeList }})</span>
+        <li class="{% if function.deprecated != null %}deprecated{% endif%}">
+            <a href="#{{ function.name }}" class="jsdoc-title">
+                {{ function.shortName }}
+            </a>
+            <span class="parameters">({{ function.parameters | paramTypeList }})</span>
         </li>
         {% endfor %}
     </ul>
@@ -119,6 +122,12 @@
         </span>
         {% if item.isFunction %}<span class="parameters">({{ item.parameters | paramTypeList }})</span>{% endif %}
         </h3>
+        {% if item.deprecated != null %}
+        <p class="deprecated">
+            <strong>Deprecated!</strong><br>
+            <em>{{ item.deprecated }}</em>
+        </p>
+        {% endif %}
         <div>
             {{ item.desc | markdown }}
         </div>
