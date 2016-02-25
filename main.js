@@ -15,8 +15,8 @@ var {ScriptRepository} = require('ringo-jsdoc');
 var strings = require('ringo/utils/strings');
 var objects = require('ringo/utils/objects');
 
-var {Environment} = require('reinhardt');
-var templates = new Environment({
+var {Reinhardt} = require('reinhardt');
+var templates = new Reinhardt({
     loader: './templates/',
     filters: require('./jsdocFilters')
 });
@@ -206,7 +206,7 @@ function main(args) {
         throw new Error('No source specified.');
     }
     if (opts.templates) {
-        templates = new Environment({
+        templates = new Reinhardt({
             loader: opts.templates
         });
     }
