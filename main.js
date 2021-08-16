@@ -207,7 +207,8 @@ function main(args) {
     }
     if (opts.templates) {
         templates = new Reinhardt({
-            loader: opts.templates
+            loader: opts.templates,
+            filters: require('./jsdocFilters')
         });
     }
 

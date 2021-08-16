@@ -231,19 +231,19 @@ exports.structureModuleDoc = function(data) {
             return !item.relatedClass;
     });
 
-    classes.forEach(function(class, i) {
+    classes.forEach(function(clazz, i) {
         function isStatic(item) {
-            return item.relatedClass === class.name && item.isStatic;
+            return item.relatedClass === clazz.name && item.isStatic;
         }
         function isNotStatic(item) {
-            return item.relatedClass === class.name && !item.isStatic;
+            return item.relatedClass === clazz.name && !item.isStatic;
         }
 
-        class.methods = functions.filter(isNotStatic);
-        class.properties = properties.filter(isNotStatic);
+        clazz.methods = functions.filter(isNotStatic);
+        clazz.properties = properties.filter(isNotStatic);
 
-        class.staticProperties = properties.filter(isStatic);
-        class.staticMethods = functions.filter(isStatic);
+        clazz.staticProperties = properties.filter(isStatic);
+        clazz.staticMethods = functions.filter(isStatic);
     });
     data.classes = classes;
     return data;
